@@ -12,7 +12,7 @@ const dbName = 'make_eat_db';
 var dbConn = null;
 
 async function getCollection(collectionName) {
-    const db = await connect()
+    const db = await connect();
     return db.collection(collectionName);
 }
 
