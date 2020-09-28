@@ -8,7 +8,7 @@ async function getRecipe(req, res) {
   
 async function getRecipes(req, res) {
     const recipes = await recipeService.query(req.query)
-    logger.debug(recipes);
+    //logger.debug(recipes);
     res.send(recipes)
 }
 
