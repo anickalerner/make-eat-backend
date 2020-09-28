@@ -70,7 +70,7 @@ async function remove(userId) {
 async function removeAll(userId) {
     const collection = await dbService.getCollection('user')
     try {
-        await collection.deleteMany()
+        await collection.deleteMany();
     } catch (err) {
         console.log(`ERROR: cannot remove user ${userId}`)
         throw err;

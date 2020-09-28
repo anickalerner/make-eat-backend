@@ -83,7 +83,9 @@ async function update(recipe) {
     recipe._id = ObjectId(recipe._id);
 
     try {
-        await collection.replaceOne({ "_id": recipe._id }, { $set: recipe })
+        console.log('before update recipe', recipe);
+        await collection.replaceOne({ "_id": ObjectId(recipe._id) }, { $set: recipe })
+        console.log('after update recipe', recipe);
         return recipe
     } catch (err) {
         console.log(`ERROR: cannot update recipe ${recipe._id}`)
