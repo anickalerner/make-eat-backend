@@ -34,7 +34,7 @@ const userRoutes = require('./api/user/user.routes')
 const recipeRoutes = require('./api/recipe/recipe.routes')
 const produceRoutes = require('./api/produce/produce.routes')
 // const reviewRoutes = require('./api/review/review.routes')
-// const connectSockets = require('./api/socket/socket.routes')
+const connectSockets = require('./api/socket/socket.routes')
 
 
 // routes
@@ -43,7 +43,7 @@ app.use('/api/user', userRoutes)
 app.use('/api/recipe', recipeRoutes)
 app.use('/api/produce', produceRoutes)
 // app.use('/api/review', reviewRoutes)
-// connectSockets(io)
+connectSockets(io)
 
 // Make every server-side-route to match the index.html
 // so when requesting http://localhost:3000/index.html/car/123 it will still respond with

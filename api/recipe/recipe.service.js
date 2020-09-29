@@ -30,13 +30,11 @@ async function getById(recipeId) {
     const collection = await dbService.getCollection('recipe')
     try {
         const recipe = await collection.findOne({ "_id": ObjectId(recipeId) })
-        delete recipe.password
-
-        recipe.givenReviews = await reviewService.query({ byRecipeId: ObjectId(recipe._id) })
-        recipe.givenReviews = recipe.givenReviews.map(review => {
-            delete review.byRecipe
-            return review
-        })
+        // recipe.givenReviews = await reviewService.query({ byRecipeId: ObjectId(recipe._id) })
+        // recipe.givenReviews = recipe.givenReviews.map(review => {
+        //     delete review.byRecipe
+        //     return review
+        // })
 
 
         return recipe
